@@ -36,7 +36,6 @@ export default class ScoresSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // arrLikes: []
             showHide: "show",
             display: "none",
             dateUrl: dateUrl
@@ -46,9 +45,6 @@ export default class ScoresSection extends Component {
 
     componentDidMount() {
 
-        
-
-
         this.props.fetch(`https://api-football-v1.p.rapidapi.com/v2/fixtures/date/${this.state.dateUrl}?timezone=Europe/Warsaw`);
 
         this.createToday = (today) => {
@@ -57,14 +53,29 @@ export default class ScoresSection extends Component {
             const mm = today.getMonth()+1; 
             const yyyy = today.getFullYear();
             const dateUrl = createUrl(yyyy, mm, dd)
+            this.props.fetch(`https://api-football-v1.p.rapidapi.com/v2/fixtures/date/${dateUrl}?timezone=Europe/Warsaw`)
             this.setState({
                 dateUrl: dateUrl
             })
-            this.props.fetch(`https://api-football-v1.p.rapidapi.com/v2/fixtures/date/${this.state.dateUrl}?timezone=Europe/Warsaw`)
+            
         }
 
-        // dateUrl = this.createToday(today)
     }
+
+    // componentDidCatch() {
+    //     this.createToday = (today) => {
+    //         // const today = new Date();
+    //         const dd = today.getDate();
+    //         const mm = today.getMonth()+1; 
+    //         const yyyy = today.getFullYear();
+    //         const dateUrl = createUrl(yyyy, mm, dd)
+    //         // this.props.fetch(`https://api-football-v1.p.rapidapi.com/v2/fixtures/date/${this.state.dateUrl}?timezone=Europe/Warsaw`)
+    //         this.setState({
+    //             dateUrl: dateUrl
+    //         })
+            
+    //     }
+    // }
 
     
 
