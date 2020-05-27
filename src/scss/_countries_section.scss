@@ -1,0 +1,36 @@
+.main-content_countries {
+    background-image: linear-gradient(to bottom right, #623D3C, #837777);
+    max-width: 20rem;
+    min-width: 10rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.main-content_countries_list {
+    list-style: none;
+    color: #ffffff;
+
+    li {
+        // text-align: center;
+        // margin-bottom: 0.5rem;
+        border-bottom: 0.1rem solid #ffffff;
+        display: flex;
+        line-height: 50%;
+
+        &:hover {
+            background-color: lighten(#623D3C, 20%);
+        }
+
+        span {
+            line-height: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        img {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-right: 0.5rem;
+            line-height: 100;
+        }
+    }
+}
