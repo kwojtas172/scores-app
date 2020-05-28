@@ -13,9 +13,9 @@ export default class ShowCalendar extends Component {
         this.setState({
             date: date
         })
-        this.props.createToday(this.state.date)
+        this.props.createToday(date)
     }
-    
+
     render() {
         return (
             <div className="show-calendar_content" style={{display: this.props.display}}>

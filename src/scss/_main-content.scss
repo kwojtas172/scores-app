@@ -1,6 +1,24 @@
 .main-content {
     background-color: #EFF3EF;
     min-height: 50rem;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
     display: flex;
+    position: relative;
+}
+
+.to-top {
+    width: 5rem;
+    height: 3rem;
+    background-image: linear-gradient(to bottom right, darken(#8AC1C3, 20%), darken(#8AC1C3, 30%));
+    color:  #FFFFFF;
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    &:hover {
+        background-image: linear-gradient(to bottom right, darken(#8AC1C3, 10%), darken(#8AC1C3, 20%));
+    }
 }

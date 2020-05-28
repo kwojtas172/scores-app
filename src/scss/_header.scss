@@ -4,12 +4,26 @@
     background-image: linear-gradient(to bottom right, darken(#EFF3EF, 50%), #000000);
     padding: 2rem;
     color: #ffffff;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
+
+    a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    @media (max-width: 640px) {
+        display: block;
+        text-align: center;
+    }
 }
 
 .header-container_nav_ul {
     display: flex;
     list-style: none;
+
+    @media (max-width: 640px) {
+        display: block;
+    }
 
     li {
         margin: 2rem;
@@ -19,7 +33,7 @@
             color: #ffffff;
             font-weight: 700;
             &:hover {
-                color: #623D3C;
+                color: lighten(#623D3C, 20%)
             }
         }
     }

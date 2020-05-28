@@ -1,6 +1,6 @@
 .main-content_scores {
     border: 0.15rem solid #8AC1C3;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
     margin: 0.5rem 0.5rem 0.5rem 0;
     width: 100%;
 }
@@ -8,21 +8,31 @@
 .main-content_scores_nav {
     list-style: none;
     background-image: linear-gradient(to bottom right, darken(#8AC1C3, 20%), darken(#8AC1C3, 30%));
-    border-radius: 0.5rem;
-    width: 100%;
+    // border-radius: 0.5rem;
+    width: auto;
     height: 3rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     position: relative;
+    padding: 0.5rem;
+
+    @media (max-width: 900px) {
+        // display: block;
+        min-height: 8rem;
+        width: auto;
+    }
     
 }
 
 .show-calendar {
+    align-items: flex-end;
     z-index: 9;
     position: absolute;
     right: 5%;
-    min-width: 4rem;
+    margin-left: 0.5rem;
+    // min-width: 4rem;
+    // color: darken(#B99A86, 20%);
     
     
     span {
@@ -37,11 +47,40 @@
 
 }
 
+.react-calendar {
+    abbr {
+        margin: 0.5rem;
+    }
+    button {
+        padding: 0.5rem;
+    }
+}
+
+.react-calendar__month-view__weekdays {
+    background-image: linear-gradient(to bottom right, #623D3C, #837777);
+    color: #ffffff;
+}
+
+
+.react-calendar__tile--now {
+    background-color: #8AC1C3;
+}
+
+button.react-calendar__navigation__label {
+    span {
+        color: darken(#B99A86, 20%);
+        font-weight: 700;
+        
+    }
+    
+}
+
 .show-calendar_content {
     position: absolute;
     top: 1rem;
     background-color: #95afaf;
     min-width: 4rem;
+    color: darken(#B99A86, 20%);
     
 }
 
@@ -51,10 +90,17 @@
     justify-content: flex-start;
     align-items: center;
     list-style: none;
+    margin-right: 1rem;
+
+    @media (max-width: 900px) {
+        display: block;
+        min-height: 8rem;
+    }
 
 
     li {
         border-right: 0.15rem solid #EFF3EF;
+        text-align: center;
         // align-self: center;
         // height: 100%;
 
@@ -62,6 +108,7 @@
             text-decoration: none;
             color: #EFF3EF;
             margin: auto 2rem;
+            text-align: center;
 
             &:hover {
                 color: darken(#B99A86, 20%);
@@ -108,9 +155,9 @@
     display: flex;
     color: #623D3C;
     padding: 0.5rem;
-    border-bottom: 0.15rem solid #618261;
+    // border-bottom: 0.15rem solid #618261;
     background-image: linear-gradient(to bottom right, #8AC1C3, #95afaf);
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
     height: 100%;
     position: relative;
     

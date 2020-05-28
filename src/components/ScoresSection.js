@@ -47,8 +47,7 @@ export default class ScoresSection extends Component {
 
         this.props.fetch(`https://api-football-v1.p.rapidapi.com/v2/fixtures/date/${this.state.dateUrl}?timezone=Europe/Warsaw`);
 
-        this.createToday = (today) => {
-            // const today = new Date();
+        this.createToday = today => {
             const dd = today.getDate();
             const mm = today.getMonth()+1; 
             const yyyy = today.getFullYear();
@@ -61,21 +60,6 @@ export default class ScoresSection extends Component {
         }
 
     }
-
-    // componentDidCatch() {
-    //     this.createToday = (today) => {
-    //         // const today = new Date();
-    //         const dd = today.getDate();
-    //         const mm = today.getMonth()+1; 
-    //         const yyyy = today.getFullYear();
-    //         const dateUrl = createUrl(yyyy, mm, dd)
-    //         // this.props.fetch(`https://api-football-v1.p.rapidapi.com/v2/fixtures/date/${this.state.dateUrl}?timezone=Europe/Warsaw`)
-    //         this.setState({
-    //             dateUrl: dateUrl
-    //         })
-            
-    //     }
-    // }
 
     
 
@@ -91,7 +75,7 @@ export default class ScoresSection extends Component {
                             <li><NavLink to="/scheduled" activeClassName="actived-navlink" >Scheduled</NavLink></li>
                             <li><NavLink to="/myscores" activeClassName="actived-navlink" >My scores</NavLink></li>
                         </ul>
-                        <div className="show-calendar" onClick={() => this.setState({showHide: this.state.showHide === "show" ? "hide" : "show", display: this.state.display === "none" ? "" : "none"})}> <span>{this.state.showHide} calendar</span><ShowCalendar createToday={this.createToday} display={this.state.display} /></div>
+                        <div className="show-calendar" > <span onClick={() => this.setState({showHide: this.state.showHide === "show" ? "hide" : "show", display: this.state.display === "none" ? "" : "none"})}>{this.state.showHide} calendar</span><ShowCalendar createToday={this.createToday} display={this.state.display} /></div>
                     </nav>
                     {this.props.state.isLoaded && this.props.countries && (
                     <Switch>

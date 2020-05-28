@@ -3,7 +3,11 @@
     max-width: 20rem;
     min-width: 10rem;
     margin: 0.5rem;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
+
+    @media (max-width: 1080px) {
+        display: none;
+    }
 }
 
 .main-content_countries_list {
