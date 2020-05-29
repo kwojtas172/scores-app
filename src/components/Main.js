@@ -5,12 +5,34 @@ import Footer from "./Footer";
 import store from "../redux/store";
 import {Provider} from "react-redux";
 
+
+
 export default class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            switchClass: "",
+            bodyBackground: ""
+        }
+    }
+
+
+    componentDidUpdate() {
+        document.body.style.backgroundColor = this.state.switchClass === "dark" ? "#363434" : "";
+    }
+    
+
+    switchMode = () => {
+        this.setState({
+            switchClass: this.state.switchClass === "dark" ? "" : "dark"
+        })
+    }
+    
     render() {
         return (
             <Provider store={store}>
-                <div className="main-wrapper">
-                    <Header />
+                <div className={`main-wrapper ${this.state.switchClass}`}>
+                    <Header switch={this.switchMode} />
                     <MainContent />
                     <Footer />
                 </div>
@@ -18,3 +40,5 @@ export default class Main extends Component {
         )
     }
 }
+
+

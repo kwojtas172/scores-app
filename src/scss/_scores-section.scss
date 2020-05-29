@@ -5,6 +5,7 @@
     width: 100%;
 }
 
+
 .main-content_scores_nav {
     list-style: none;
     background-image: linear-gradient(to bottom right, darken(#8AC1C3, 20%), darken(#8AC1C3, 30%));
@@ -23,6 +24,13 @@
         width: auto;
     }
     
+}
+
+.dark {
+    .main-content_scores_nav {
+        background-image: linear-gradient(to bottom right, darken(#8AC1C3, 60%), darken(#8AC1C3, 80%));
+        color: #ffffff
+    }
 }
 
 .show-calendar {
@@ -64,6 +72,10 @@
 
 .react-calendar__tile--now {
     background-color: #8AC1C3;
+}
+
+.react-calendar__tile--active {
+    border: 0.25rem solid #623D3C;
 }
 
 button.react-calendar__navigation__label {
@@ -150,6 +162,18 @@ button.react-calendar__navigation__label {
     }
 }
 
+.dark {
+    .show-scores {
+        li {
+            color: #B99A86;
+            background-color: #363434;
+            &:hover {
+                background-color: darken(#EFF3EF, 65%);
+            }
+        }
+    }
+}
+
 
 .show-country-league {
     display: flex;
@@ -174,6 +198,13 @@ button.react-calendar__navigation__label {
         &:hover {
             color: lighten(#623D3C, 20%);
         }
+    }
+}
+
+.dark {
+    .show-country-league {
+        background-image: linear-gradient(to bottom right, rgb(48, 67, 68), #394444);
+        color: #ffffff;
     }
 }
 
@@ -236,4 +267,11 @@ button.react-calendar__navigation__label {
         
     }
 
+}
+
+.dark {
+    .show-table {
+        background-color: darken(#618261, 60%);
+        color: #ffffff;
+    }
 }

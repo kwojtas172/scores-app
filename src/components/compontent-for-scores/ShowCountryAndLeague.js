@@ -84,7 +84,8 @@ export default class ShowCountryAndLeauge extends Component {
                             <span onClick={() => this.handle(this.props.country.id)} >{this.state.standings} </span> 
                         </div>
                         <ShowTable key={this.props.country.id} display={this.state.display} arr={this.state.arr} sortByWins={this.sortByWins} sortByPoints={this.sortByPoints} sortByGoals={this.sortByGoals} />
-                        {this.props.fixtures.map(game => {
+                        {this.props.fixtures
+                        .map(game => {
                             if (this.props.country.country === game.league.country && this.props.country.name === game.league.name) {
                                 return <ShowScore key={game.homeTeam.team_id} game={game} toggle={this.props.toggle}  />
                             }

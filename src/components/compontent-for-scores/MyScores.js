@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import ShowCountryAndLeague from "./ShowCountryAndLeague";
 
 export default class MyScores extends Component {
+
     render() {
+      
         if(this.props.fixtures.arr.filter(game => game.isLiked).length) {
             return (
                 <div>

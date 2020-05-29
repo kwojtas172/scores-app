@@ -7,7 +7,7 @@ export default class Header extends Component {
         return (
             <header className="header-container">
                 <HeaderName />
-                <HeaderNav />
+                <HeaderNav switch={this.props.switch}/>
             </header>
         )
     }

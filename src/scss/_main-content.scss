@@ -6,6 +6,13 @@
     position: relative;
 }
 
+.dark {
+    .main-content {
+        background-color: darken(#EFF3EF, 90%);
+    }
+    color: lighten(#623D3C, 90%);
+}
+
 .to-top {
     width: 5rem;
     height: 3rem;
@@ -18,6 +25,7 @@
     border-radius: 0.25rem;
     padding: 0.5rem;
     font-size: 1.5rem;
+    cursor: pointer;
     &:hover {
         background-image: linear-gradient(to bottom right, darken(#8AC1C3, 10%), darken(#8AC1C3, 20%));
     }

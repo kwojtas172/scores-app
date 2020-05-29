@@ -4,6 +4,19 @@ import { combineReducers } from 'redux'
 
 const reducerScores = (state=[], action) => {
     if(action.type === UPDATE_STATE) {
+        if(localStorage.getItem("fixtures")) {
+            action.payload.arr.forEach(game => {
+                console.log(JSON.parse(localStorage.getItem("fixtures")))
+
+                JSON.parse(localStorage.getItem("fixtures")).arr.forEach(gFromLocStag => {
+                    if(gFromLocStag.fixture_id === game.fixture_id) {
+                        if(gFromLocStag.isLiked) {
+                            game.isLiked = true
+                        }
+                    }
+                })
+            })
+        }
         return state = action.payload
     }
     if(action.type === TOGGLE) {
@@ -13,10 +26,11 @@ const reducerScores = (state=[], action) => {
             }
 
         })
+        localStorage.setItem("fixtures", JSON.stringify(state))
         return state
     }
 
-    return state
+     return state
 }
 
 const reducerCountries = (state=[], action) => {
@@ -26,7 +40,6 @@ const reducerCountries = (state=[], action) => {
         action.payload.forEach(game => {
             
             if(idTemp.indexOf(game.league_id) === -1 ) {
-                // tempArr.push(game.league)
                 game.league.id = game.league_id
                 tempArr = [...tempArr, game.league]
             }
