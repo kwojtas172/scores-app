@@ -70,6 +70,7 @@ export const fetchApiListCountries = url => dispatch => {
     .then(data => {
         const tempArr = data.api.countries;
         dispatch(createList(tempArr))
+        console.log(tempArr)
         
     })
 

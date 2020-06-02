@@ -11,7 +11,7 @@ export default class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            switchClass: "",
+            switchClass: localStorage.getItem("whichTheme") ? JSON.parse(localStorage.getItem("whichTheme")) : "",
             bodyBackground: ""
         }
     }
@@ -26,6 +26,7 @@ export default class Main extends Component {
         this.setState({
             switchClass: this.state.switchClass === "dark" ? "" : "dark"
         })
+        localStorage.setItem("whichTheme", JSON.stringify(this.state.switchClass === "dark" ? "" : "dark"));
     }
     
     render() {

@@ -6,24 +6,32 @@ export default class HeaderNav extends Component {
    constructor(props) {
        super(props);
        this.state = {
-           switchValue: "sun",
-           mode: "Dark"
+           switchValue: localStorage.getItem("switch") ? JSON.parse(localStorage.getItem("switch")) : "sun",
+           mode: localStorage.getItem("mode") ? JSON.parse(localStorage.getItem("mode")) : "Dark"
        }
    }
    
 
-    handleSwitch = () => {
+
+    handleSwitch = e => {
+        e.preventDefault();
         this.setState({
             switchValue: this.state.switchValue === "sun" ? "moon" : "sun",
             mode: this.state.mode === "Dark" ? "Light" : "Dark"
         })
         this.props.switch()
+        localStorage.setItem("switch", JSON.stringify(this.state.switchValue === "sun" ? "moon" : "sun"));
+        localStorage.setItem("mode", JSON.stringify(this.state.mode === "Dark" ? "Light" : "Dark"));
+        
+        
     }
+    
+
     render() {
         return (
             <nav className="header-container_nav">
                 <ul className="header-container_nav_ul">
-                    <li><a href="#" onClick={this.handleSwitch}>
+                    <li><a href="none" onClick={e => this.handleSwitch(e)}>
                         {this.state.switchValue === "sun" && <FontAwesomeIcon icon={faSun} style={{color: "#FBDB48"}} />}
         {"   "}{this.state.mode} mode{"   "}
                         
