@@ -1,5 +1,7 @@
 describe('My First Test', () => {
-    it('Does not do much!', () => {
-      expect(true).to.equal(false)
+    it('clicks the link "type"', () => {
+      cy.visit('https://kwojtas172.github.io/scores-app/#/')
+  
+      cy.contains('type').click()
     })
   })
