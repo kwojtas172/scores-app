@@ -36,7 +36,7 @@ export default class ScoresSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showHide: "show",
+            showHide: "Show",
             display: "none",
             dateUrl: dateUrl
         }
@@ -75,7 +75,7 @@ export default class ScoresSection extends Component {
                             <li><NavLink to="/scheduled" activeClassName="actived-navlink" >Scheduled</NavLink></li>
                             <li><NavLink to="/myscores" activeClassName="actived-navlink" >My scores</NavLink></li>
                         </ul>
-                        <div className="show-calendar" > <span onClick={() => this.setState({showHide: this.state.showHide === "show" ? "hide" : "show", display: this.state.display === "none" ? "" : "none"})}>{this.state.showHide} calendar</span><ShowCalendar createToday={this.createToday} display={this.state.display} /></div>
+                        <div className="show-calendar" > <span onClick={() => this.setState({showHide: this.state.showHide === "Show" ? "Hide" : "Show", display: this.state.display === "none" ? "" : "none"})}>{this.state.showHide} calendar</span><ShowCalendar createToday={this.createToday} display={this.state.display} /></div>
                     </nav>
                     {this.props.state.isLoaded && this.props.countries && (
                     <Switch>

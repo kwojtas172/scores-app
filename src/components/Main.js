@@ -17,6 +17,10 @@ export default class Main extends Component {
     }
 
 
+    componentDidMount() {
+        document.body.style.backgroundColor = this.state.switchClass === "dark" ? "#363434" : "";
+    }
+
     componentDidUpdate() {
         document.body.style.backgroundColor = this.state.switchClass === "dark" ? "#363434" : "";
     }

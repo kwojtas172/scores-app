@@ -22,7 +22,7 @@ export default class ShowTable extends Component {
                 <div className="show-table" style={{display: display}}>
                     <button onClick={() => this.handleSortByPoints(arr)}>Sort by points</button>
                     <button onClick={() => this.handleSortByWins(arr)}>Sort by wins</button>
-                    <button onClick={() => this.handleSortByGoals(arr)}>sort by +goals</button>
+                    <button onClick={() => this.handleSortByGoals(arr)}>Sort by +goals</button>
                     <table>
                         <thead>
                         <tr style ={{fontWeight: "bold"}}>
